@@ -7,13 +7,39 @@ module.exports = {
     // You can overwrite values here that are used for the SEO component
     // Of course you can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/master/themes/gatsby-theme-cara/gatsby-config.js
+    siteTitle: `Audras site`,
+    siteTitleAlt: `Cara - @lekoarts/gatsby-theme-cara`,
+    siteHeadline: `Cara - Gatsby Theme from @lekoarts`,
+    siteUrl: `https://cara.lekoarts.de`,
+    siteDescription: `Playful and Colorful One-Page portfolio featuring Parallax effects and animations`,
+    siteLanguage: `en`,
+    siteImage: `/banner.jpg`,
+    author: `@lekoarts_de`,
+    // basePath,
+    title: 'Audras site',
     siteTitleAlt: `Cara - Gatsby Starter Portfolio`,
   },
   plugins: [
     {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `ultrahappyalarm`,
+        access_token: "a valid access token",
+        instagram_id: "your instagram_business_account id",
+        paginate: 100,
+        maxPosts: 1000,
+      },
+    },
+    {
       resolve: `@lekoarts/gatsby-theme-cara`,
       // See the theme's README for all available options
       options: {},
+    },
+    {
+      resolve: `gatsby-transformer-sharp`
+    },
+    {
+      resolve: `gatsby-plugin-sharp`
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
